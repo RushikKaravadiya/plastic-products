@@ -117,7 +117,7 @@ const ProductDetail = () => {
               {/* CTA Buttons */}
               <div className="space-y-3 mb-8">
                 <a
-                  href="https://wa.me/919714586233?text=I%20am%20interested%20in%20your%20product%20-"
+                  href={`https://wa.me/919714586233?text=I am interested in your product - ${product.name}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 btn-secondary"

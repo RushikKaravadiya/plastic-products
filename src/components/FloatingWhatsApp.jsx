@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
 const FloatingWhatsApp = () => {
-const whatsappLink = 'https://wa.me/919714586233?text=Welcome%20to%20Maruti%20Plastic%20Products!%20How%20can%20we%20help%20you%20today?'
+const whatsappLink = 'https://wa.me/919714586233?text=Maruti%20Plastic%20Products!%20How%20can%20we%20help%20you%20today?'
   return (
     <motion.a
       href={whatsappLink}
