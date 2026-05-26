@@ -69,21 +69,14 @@ const Hero = () => {
             Trusted by leading manufacturers worldwide for superior sealing
             performance and reliability
           </p>
-          <div className="flex flex-col gap-3 justify-center mt-44 w-full">
+            <div className="flex sm:hidden justify-center mt-44 w-full">
             <Link
-              to="/products"
-              className="px-8 py-4 bg-[#366199] text-white rounded-lg font-semibold shadow-lg hover:bg-[#0B1929] hover:scale-105 transition-all duration-300 mx-auto w-64"
+                to="/products"
+                className="px-8 py-4 bg-[#366199] text-white rounded-lg font-semibold shadow-lg hover:bg-[#0B1929] transition-all duration-300 mx-auto w-64 text-center"
             >
-              View Products
+                View Products
             </Link>
-
-            <Link
-              to="/#contact"
-              className="px-8 py-4 bg-[#366199] text-white rounded-lg font-semibold shadow-lg hover:bg-[#0B1929] hover:scale-105 transition-all duration-300 mx-auto w-64"
-            >
-              Contact us{" "}
-            </Link>
-          </div>
+            </div>
         </motion.div>
       </div>
 
