@@ -112,7 +112,7 @@ const TermsOfService = () => {
               For administrative clarifications regarding bulk sales contracts, delivery terms, or sample authorizations, reach out directly to our help desk:
             </p>
             <div className="bg-light-gray p-6 rounded-xl border-l-4 border-accent-orange text-dark-blue space-y-2">
-              <p><strong>Corporate Base:</strong> Rajpar Road, Morbi, India</p>
+              <p><strong>Corporate Base:</strong> Sanale-Rajpar Road, Morbi, India</p>
               <p><strong>Primary Contact:</strong> +91-97145 86233</p>
               <p><strong>Administration Mailbox:</strong> <a href="mailto:admin.marutiplastic@gmail.com" className="text-accent-orange hover:underline font-medium">admin.marutiplastic@gmail.com</a></p>
             </div>
