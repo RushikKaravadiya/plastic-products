@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import ProductCard from '../components/ProductCard'
-import { products } from '../data/products'
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import ProductCard from "../components/ProductCard";
+import { products } from "../data/products";
 
 const Products = () => {
-  const filteredProducts = products
+  const filteredProducts = products;
 
   return (
     <div>
@@ -25,7 +25,8 @@ const Products = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg text-gray-300 max-w-2xl mx-auto"
           >
-            Browse our comprehensive collection of premium industrial gaskets and sealing solutions
+            Browse our comprehensive collection of premium industrial gaskets
+            and sealing solutions
           </motion.p>
         </div>
       </div>
@@ -62,7 +63,8 @@ const Products = () => {
         >
           <h2 className="text-4xl font-bold mb-4">Can't find what you need?</h2>
           <p className="text-gray-300 text-lg mb-8">
-            We offer custom gasket solutions tailored to your specific requirements
+            We offer custom gasket solutions tailored to your specific
+            requirements
           </p>
           <Link to="/#contact" className="btn-primary inline-block">
             Contact Us
@@ -70,7 +72,7 @@ const Products = () => {
         </motion.div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;
