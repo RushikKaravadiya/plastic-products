@@ -4,7 +4,8 @@ export const products = [
     name: "Cabinet Profile Gasket",
     shortDescription:
       "PVC Cabinet Profile Gasket for secure glass fitting applications",
-    images: ["/GasketModel01.png", "/liveG01I01.png"],
+    images: ["/GasketModel01.png", "/liveG01I01.png","/liveG01I02.jpeg","/liveG01I03.jpeg"],
+    videos: ["/liveG01V01.mp4"],
     fullDescription:
       "High-performance Cabinet Profile Gasket designed for secure glass fitting applications. Provides excellent UV resistance, long-lasting durability, and reliable sealing performance for extended use.",
     specifications: {
@@ -22,7 +23,13 @@ export const products = [
     name: "Glass Joint Gasket Glue Strip",
     shortDescription:
       "High-quality PVC glass joint gasket glue strip for secure sealing and glass protection applications",
-    images: ["/GasketModel02.png"],
+    images: [
+      "/GasketModel02.png",
+      "/liveG02I01.jpg",
+      "/liveG02I02.jpeg",
+      "/liveG02I03.jpg",
+    ],
+    videos: ["/liveG02V01.mp4"],
     fullDescription:
       "High-performance glass joint gasket glue strip designed for proper bounding and glass protection applications. Provides excellent adhesion, long-lasting durability, and reliable performance in various environmental conditions.",
     specifications: {
@@ -48,7 +55,7 @@ export const products = [
     name: "Aluminum Window Air Tight Gasket",
     shortDescription:
       "Premium-quality aluminum window air tight gasket for superior sealing and insulation applications",
-    images: ["/GasketModel03.png"],
+    images: ["/GasketModel03.png","/liveG03I01.png","/liveG03I02.png","/liveG03I03.png"],
     fullDescription:
       "High-performance Aluminum Window Air Tight Gasket specially designed for aluminum window systems to provide superior air sealing, waterproof protection, and noise insulation. Manufactured using flexible PVC and rubber material, this gasket ensures excellent durability, weather resistance, and long-lasting performance for residential, commercial, and industrial applications.",
     specifications: {
@@ -131,23 +138,5 @@ export const whyChooseUs = [
     title: "Competitive Pricing",
     description: "Premium quality products at competitive market prices",
     icon: "DollarSign",
-  },
-];
-
-export const testimonials = [
-  {
-    company: "Laranza Hardware",
-    text: "Exceptional quality and reliability. Their gaskets have consistently performed beyond expectations.",
-    rating: 5,
-  },
-  {
-    company: "Udan Garuda Impex",
-    text: "Outstanding customer service and quick delivery. Highly recommended for industrial sealing solutions.",
-    rating: 4,
-  },
-  {
-    company: "Satyam Enterprises",
-    text: "Premium quality products with competitive pricing. Perfect partner for our manufacturing needs.",
-    rating: 5,
   },
 ];

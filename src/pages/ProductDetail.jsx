@@ -1,7 +1,8 @@
+// components/ProductDetail.jsx
+
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { products } from "../data/products";
-// Imported PackageX here to handle out of stock status visuals
 import {
   ArrowLeft,
   Check,
@@ -16,11 +17,13 @@ const ProductDetail = () => {
 
   const product = products.find((p) => p.id === parseInt(id));
 
-  const [selectedImage, setSelectedImage] = useState("");
+  const [selectedMedia, setSelectedMedia] = useState("");
 
   useEffect(() => {
     if (product?.images?.length > 0) {
-      setSelectedImage(product.images[0]);
+      setSelectedMedia(product.images[0]);
+    } else if (product?.videos?.length > 0) {
+      setSelectedMedia(product.videos[0]);
     }
   }, [product]);
 
@@ -53,7 +56,6 @@ const ProductDetail = () => {
             to="/products"
             className="flex items-center text-accent-orange hover:text-accent-orange/80 font-semibold transition-colors"
           >
-            {/* Keeping ArrowLeft inside the link container fixes the alignment */}
             <ArrowLeft size={20} />
             <span>Back to Products</span>
           </Link>
@@ -64,28 +66,41 @@ const ProductDetail = () => {
       <div className="section-padding">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {/* LEFT SIDE IMAGES */}
+            {/* LEFT SIDE IMAGES AND VIDEOS */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
             >
               <div className="sticky top-24">
-                {/* BIG IMAGE */}
+                {/* BIG MEDIA DISPLAY */}
                 <div className="bg-light-gray rounded-2xl p-4 mb-4">
-                  <img
-                    src={selectedImage}
-                    alt={product.name}
-                    className="w-full h-[450px] object-contain rounded-xl"
-                  />
+                  {selectedMedia?.endsWith('.mp4') ? (
+                    <video
+                      key={selectedMedia} // Thumbnail click karta j video automatic chalu thase
+                      src={selectedMedia}
+                      className="w-full h-[450px] object-contain rounded-xl"
+                      controls
+                      autoPlay
+                      muted
+                      loop
+                    />
+                  ) : (
+                    <img
+                      src={selectedMedia}
+                      alt={product.name}
+                      className="w-full h-[450px] object-contain rounded-xl"
+                    />
+                  )}
                 </div>
 
                 {/* THUMBNAILS */}
                 <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-accent-orange/50 scrollbar-track-light-gray">
-                  {product.images.map((img, index) => (
+                  {/* Image Thumbnails */}
+                  {product.images?.map((img, index) => (
                     <button
-                      key={index}
-                      onClick={() => setSelectedImage(img)}
+                      key={`img-${index}`}
+                      onClick={() => setSelectedMedia(img)}
                       className={`
                         flex-none
                         h-[90px]
@@ -95,7 +110,7 @@ const ProductDetail = () => {
                         border-2
                         transition-all
                         ${
-                          selectedImage === img
+                          selectedMedia === img
                             ? "border-accent-orange"
                             : "border-gray-200"
                         }
@@ -103,9 +118,43 @@ const ProductDetail = () => {
                     >
                       <img
                         src={img}
-                        alt={`${product.name}-${index}`}
+                        alt={`${product.name}-thumb-image-${index}`}
                         className="w-full h-full object-contain"
                       />
+                    </button>
+                  ))}
+
+                  {/* Video Thumbnails */}
+                  {product.videos?.map((vid, index) => (
+                    <button
+                      key={`vid-${index}`}
+                      onClick={() => setSelectedMedia(vid)}
+                      className={`
+                        flex-none
+                        h-[90px]
+                        aspect-square
+                        rounded-xl
+                        overflow-hidden
+                        border-2
+                        transition-all
+                        relative
+                        ${
+                          selectedMedia === vid
+                            ? "border-accent-orange"
+                            : "border-gray-200"
+                        }
+                      `}
+                    >
+                      <video
+                        src={vid}
+                        className="w-full h-full object-contain"
+                        muted
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                        <motion.div initial={{scale: 0.9}} whileHover={{scale: 1.1}} className="text-white p-2 bg-dark-blue/80 rounded-full">
+                            <span className="font-bold text-lg">▶</span>
+                        </motion.div>
+                      </div>
                     </button>
                   ))}
                 </div>
@@ -162,7 +211,6 @@ const ProductDetail = () => {
                     ([key, value]) => (
                       <div key={key} className="flex justify-between gap-4">
                         <span className="text-gray-600 capitalize">{key}:</span>
-
                         <span className="font-semibold text-dark-blue text-right">
                           {value}
                         </span>
@@ -201,7 +249,6 @@ const ProductDetail = () => {
               {product.applications.map((app, index) => (
                 <div key={index} className="flex items-center gap-3">
                   <Check className="text-accent-orange" size={24} />
-
                   <span className="text-gray-600">{app}</span>
                 </div>
               ))}
@@ -227,7 +274,6 @@ const ProductDetail = () => {
                     to={`/product/${related.id}`}
                     className="card-hover bg-white rounded-lg overflow-hidden shadow-elegant"
                   >
-                    {/* Fixed image render array matching data model properties */}
                     <div className="h-48 overflow-hidden bg-gray-200">
                       <img
                         src={related.images?.[0]}
@@ -240,7 +286,6 @@ const ProductDetail = () => {
                       <h4 className="font-bold text-dark-blue mb-2">
                         {related.name}
                       </h4>
-
                       <p className="text-gray-600 text-sm">
                         {related.shortDescription}
                       </p>
