@@ -29,26 +29,36 @@ const Hero = () => {
   return (
     <div className="relative h-[500px] sm:h-[600px] overflow-hidden">
       {/* Slider */}
-      <div className="relative w-full h-full">
-        {heroImages.map((image, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: index === currentSlide ? 1 : 0 }}
-            transition={{ duration: 0.5 }}
-            className="absolute inset-0"
-          >
-            <img
-              src={image}
-              alt={`Hero slide ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-        ))}
+      <div className="relative w-full h-full bg-black">
+        {heroImages.map((image, index) => {
+          const isActive = index === currentSlide;
+          
+          return (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0 }}
+              animate={{ 
+                opacity: isActive ? 1 : 0,
+                scale: isActive ? 1 : 1.15
+              }}
+              transition={{ 
+                opacity: { duration: 0.5, ease: "easeInOut" },
+                scale: { duration: 5.2, ease: "easeOut" } 
+              }}
+              className="absolute inset-0 origin-center"
+            >
+              <img
+                src={image}
+                alt={`Hero slide ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          );
+        })}
       </div>
 
       {/* Dark Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark-blue opacity-60"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark-blue opacity-60 pointer-events-none"></div>
 
       {/* Content */}
       <div className="absolute inset-0 flex items-center justify-center">
@@ -69,14 +79,14 @@ const Hero = () => {
             Trusted by leading manufacturers worldwide for superior sealing
             performance and reliability
           </p>
-            <div className="flex sm:hidden justify-center mt-44 w-full">
+          <div className="flex sm:hidden justify-center mt-44 w-full">
             <Link
-                to="/products"
-                className="px-8 py-4 bg-[#366199] text-white rounded-lg font-semibold shadow-lg hover:bg-[#0B1929] transition-all duration-300 mx-auto w-64 text-center"
+              to="/products"
+              className="px-8 py-4 bg-[#366199] text-white rounded-lg font-semibold shadow-lg hover:bg-[#0B1929] transition-all duration-300 mx-auto w-64 text-center"
             >
-                View Products
+              View Products
             </Link>
-            </div>
+          </div>
         </motion.div>
       </div>
 
@@ -97,7 +107,6 @@ const Hero = () => {
 
       {/* Dots */}
       <div className="hidden sm:flex absolute bottom-6 left-1/2 -translate-x-1/2 gap-2 z-20">
-        {" "}
         {heroImages.map((_, index) => (
           <button
             key={index}
