@@ -15,7 +15,7 @@ const Hero = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
+    }, 3000);
     return () => clearInterval(timer);
   }, []);
 
@@ -43,7 +43,7 @@ const Hero = () => {
               }}
               transition={{ 
                 opacity: { duration: 0.5, ease: "easeInOut" },
-                scale: { duration: 5.2, ease: "easeOut" } 
+                scale: { duration: 3.2, ease: "easeOut" } 
               }}
               className="absolute inset-0 origin-center"
             >
