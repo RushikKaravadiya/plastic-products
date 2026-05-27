@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ShieldCheck, Eye, Landmark, HelpCircle } from "lucide-react"; // ◄ Changed ShieldLock to ShieldCheck
+import { ArrowLeft, ShieldCheck, Eye, Landmark, HelpCircle } from "lucide-react";
 
 const PrivacyPolicy = () => {
   const lastUpdated = "May 2026";
@@ -30,7 +30,7 @@ const PrivacyPolicy = () => {
             className="flex justify-center mb-4"
           >
             <div className="bg-white/10 p-3 rounded-full text-accent-orange">
-              <ShieldCheck size={36} /> {/* ◄ Updated Icon component tag here */}
+              <ShieldCheck size={36} />
             </div>
           </motion.div>
           <motion.h1
@@ -83,7 +83,7 @@ const PrivacyPolicy = () => {
           {/* 2. How We Use Your Information */}
           <section className="space-y-4">
             <div className="flex items-center gap-3 text-dark-blue">
-              <ShieldCheck className="text-accent-orange shrink-0" size={24} /> {/* ◄ Updated Icon component tag here */}
+              <ShieldCheck className="text-accent-orange shrink-0" size={24} />
               <h2 className="text-2xl font-bold">2. How We Use Your Information</h2>
             </div>
             <p className="leading-relaxed">
@@ -92,7 +92,10 @@ const PrivacyPolicy = () => {
             <ul className="list-disc pl-6 space-y-2">
               <li>Provide, maintain, and evaluate our structural plastic supply networks.</li>
               <li>Improve customer response parameters and process technical profile custom requests.</li>
-              <li>Develop customized technical profiles (such as distinct white, transparent, or variable hardness grades).</li>
+              <li>
+                Develop customized technical profiles based on selected industrial raw materials 
+                (including high-performance PVC compounds, flexible TPE, and weather-resistant TPV/EPDM polymers).
+              </li>
               <li>Route purchase queries initiated via WhatsApp directly to our Morbi distribution office.</li>
             </ul>
           </section>

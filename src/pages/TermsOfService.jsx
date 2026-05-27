@@ -71,8 +71,12 @@ const TermsOfService = () => {
               All quotes provided by our Morbi sales division are based on current raw material plastic polymer metrics:
             </p>
             <ul className="list-disc pl-6 space-y-2">
-              <li><strong className="text-dark-blue">Production Timelines:</strong> Manufacturing lead times begin only after technical drawings are explicitly locked and sample metrics are verified by your engineering team.</li>
-              <li><strong className="text-dark-blue">Custom Profiling:</strong> Custom hardness formulas or specific pigment requests are mixed per order batch tolerances. Minor structural variations across processing cycles fall within accepted industry parameters.</li>
+              <li>
+                <strong className="text-dark-blue">Production Timelines:</strong> Manufacturing lead times begin only after technical drawings are explicitly locked and sample metrics are verified by your engineering team.
+              </li>
+              <li>
+                <strong className="text-dark-blue">Custom Profiling:</strong> Custom hardness formulas (Hard, Soft, or Semi-Hard), distinct size requirements (such as 4mm up to 12mm), or specific pigment requests are mixed per order batch tolerances. Minor structural variations across processing cycles fall within accepted industrial standards.
+              </li>
             </ul>
           </section>
 
@@ -98,7 +102,7 @@ const TermsOfService = () => {
               <h2 className="text-2xl font-bold">3. Structural Liability Limits</h2>
             </div>
             <p className="leading-relaxed">
-              Maruti Plastic Products provides top-tier industrial components. However, purchasers must execute their own internal diagnostic evaluations to verify compatibility with finished product frameworks before full manufacturing deployment.
+              Maruti Plastic Products provides top-tier industrial sealing profiles, gaskets, and edge strips. However, purchasers must execute their own internal diagnostic evaluations to verify material compatibility with finished hardware or profile frameworks (such as specific aluminum windows, glass partitions, or cabinet assemblies) before full manufacturing deployment.
             </p>
           </section>
 
@@ -112,7 +116,7 @@ const TermsOfService = () => {
               For administrative clarifications regarding bulk sales contracts, delivery terms, or sample authorizations, reach out directly to our help desk:
             </p>
             <div className="bg-light-gray p-6 rounded-xl border-l-4 border-accent-orange text-dark-blue space-y-2">
-              <p><strong>Corporate Base:</strong> Sanale-Rajpar Road, Morbi, India</p>
+              <p><strong>Corporate Base:</strong> Rajpar Road, Morbi, India</p>
               <p><strong>Primary Contact:</strong> +91-97145 86233</p>
               <p><strong>Administration Mailbox:</strong> <a href="mailto:admin.marutiplastic@gmail.com" className="text-accent-orange hover:underline font-medium">admin.marutiplastic@gmail.com</a></p>
             </div>
