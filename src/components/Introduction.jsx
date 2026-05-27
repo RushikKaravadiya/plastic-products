@@ -33,7 +33,11 @@ const Introduction = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
   }
 
   return (
@@ -43,46 +47,73 @@ const Introduction = () => {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
         >
           {/* Image */}
           <motion.div variants={itemVariants} className="order-2 md:order-1">
             <img
               src="/aboutImg.png"
-              alt="Manufacturing"
-              className="w-full rounded-lg shadow-elegant"
+              alt="Maruti Plastic Products"
+              className="w-full rounded-2xl shadow-elegant object-cover"
             />
           </motion.div>
 
           {/* Content */}
           <motion.div variants={itemVariants} className="order-1 md:order-2">
-            <h2 className="text-4xl sm:text-5xl font-bold text-dark-blue mb-6">
-              About <span className="text-accent-orange">Plastic Products</span>
+            <h2 className="text-4xl sm:text-5xl font-bold text-dark-blue mb-6 leading-tight">
+              About{' '}
+              <span className="text-accent-orange">
+                Maruti Plastic Products
+              </span>
             </h2>
-            <p className="text-gray-600 text-lg mb-4">
-              With over 17 years of industry experience, Plastic Products has established itself as a leading manufacturer of premium industrial gaskets and sealing solutions. Our commitment to excellence and innovation drives us to deliver products that exceed international standards.
+
+            <p className="text-gray-600 text-lg leading-relaxed mb-5">
+              With 17+ years of expertise in polymer extrusion, Maruti Plastic
+              Products is a trusted manufacturer of premium architectural
+              gaskets, sealing profiles, and edge strips based in Morbi,
+              Gujarat.
             </p>
-            <p className="text-gray-600 text-lg mb-6">
-              We serve diverse industries including automotive, oil & gas, chemicals, pharmaceuticals, and food processing. Our state-of-the-art manufacturing facilities and skilled workforce ensure consistent quality in every product we deliver.
+
+            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+              We deliver durable sealing solutions for aluminum windows, glass
+              partitions, shower enclosures, and modular furniture using
+              high-quality PVC, TPE, and TPV (EPDM) materials for superior
+              flexibility, UV resistance, and long-lasting performance.
             </p>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-accent-orange/20 rounded-lg flex items-center justify-center">
-                  <span className="text-accent-orange text-xl">✓</span>
+
+            {/* Highlights */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-accent-orange/15 flex items-center justify-center">
+                  <span className="text-accent-orange text-xl font-bold">
+                    ✓
+                  </span>
                 </div>
-                <span className="text-dark-blue font-semibold">ISO 9001:2015 Certified</span>
+                <span className="text-dark-blue font-semibold text-lg">
+                  17+ Years of Industry Experience
+                </span>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-accent-orange/20 rounded-lg flex items-center justify-center">
-                  <span className="text-accent-orange text-xl">✓</span>
+
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-accent-orange/15 flex items-center justify-center">
+                  <span className="text-accent-orange text-xl font-bold">
+                    ✓
+                  </span>
                 </div>
-                <span className="text-dark-blue font-semibold">17+ Years of Excellence</span>
+                <span className="text-dark-blue font-semibold text-lg">
+                  ISI Certified Quality Standards
+                </span>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-accent-orange/20 rounded-lg flex items-center justify-center">
-                  <span className="text-accent-orange text-xl">✓</span>
+
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-accent-orange/15 flex items-center justify-center">
+                  <span className="text-accent-orange text-xl font-bold">
+                    ✓
+                  </span>
                 </div>
-                <span className="text-dark-blue font-semibold">Global Distribution Network</span>
+                <span className="text-dark-blue font-semibold text-lg">
+                  Global Distribution Network
+                </span>
               </div>
             </div>
           </motion.div>

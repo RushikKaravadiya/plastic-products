@@ -4,10 +4,7 @@ export const products = [
     name: "Cabinet Profile Gasket",
     shortDescription:
       "PVC Cabinet Profile Gasket for secure glass fitting applications",
-    images: [
-      "/GasketModel01.png",
-      "/liveG01I01.png"
-    ],
+    images: ["/GasketModel01.png", "/liveG01I01.png"],
     fullDescription:
       "High-performance Cabinet Profile Gasket designed for secure glass fitting applications. Provides excellent UV resistance, long-lasting durability, and reliable sealing performance for extended use.",
     specifications: {
@@ -112,8 +109,7 @@ export const whyChooseUs = [
   },
   {
     title: "Quality Assurance",
-    description:
-      "ISO certified manufacturing with rigorous quality control standards",
+    description: "Premium manufacturing with strict quality control standards",
     icon: "Check",
   },
   {
