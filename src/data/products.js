@@ -83,7 +83,7 @@ export const products = [
     name: "Edge Band Type Strip",
     shortDescription:
       "High-quality PVC edge band type strip for edge protection and decorative finishing applications",
-    images: ["/GasketModel04.png"],
+    images: ["/GasketModel04.png","/liveG04I01.png","/liveG04I02.png"],
     fullDescription:
       "Premium-grade Edge Band Type Strip designed for smooth edge finishing, surface protection, and decorative applications in furniture and panel systems. Manufactured using durable PVC material, this strip provides excellent flexibility, strong edge coverage, impact resistance, and long-lasting performance for residential and commercial use.",
     specifications: {

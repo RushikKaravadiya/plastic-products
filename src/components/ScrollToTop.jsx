@@ -1,3 +1,5 @@
+// src/components/ScrollToTop.jsx
+
 import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -7,10 +9,9 @@ const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false)
   const { pathname, hash } = useLocation()
 
-  // Scroll to top on route change, or scroll to hash element if present
+  // Scroll to top on route change
   useEffect(() => {
     if (hash) {
-      // If there's a hash, scroll to that element after a small delay
       setTimeout(() => {
         const element = document.getElementById(hash.replace('#', ''))
         if (element) {
@@ -18,7 +19,6 @@ const ScrollToTop = () => {
         }
       }, 100)
     } else {
-      // Otherwise scroll to top
       window.scrollTo(0, 0)
     }
   }, [pathname, hash])
@@ -33,6 +33,7 @@ const ScrollToTop = () => {
     }
 
     window.addEventListener('scroll', toggleVisibility)
+
     return () => window.removeEventListener('scroll', toggleVisibility)
   }, [])
 
@@ -52,7 +53,7 @@ const ScrollToTop = () => {
           exit={{ opacity: 0, scale: 0 }}
           transition={{ duration: 0.3 }}
           onClick={scrollToTop}
-          className="fixed bottom-24 right-4 sm:right-8 bg-accent-orange text-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform z-40"
+          className="fixed bottom-[170px] right-4 sm:right-9 bg-[#366199] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform z-40"
         >
           <ChevronUp size={24} />
         </motion.button>
